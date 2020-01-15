@@ -13,7 +13,7 @@ import br.com.rsinet.hub_tdd.suporte.Web;
 import br.com.rsinet.hub_tdd.utility.Constante;
 import br.com.rsinet.hub_tdd.utility.ExcelUtils;
 
-public class PageObjectModel {
+public class CadastroDeUsuario {
 	private static WebDriver driver = Web.createChrome();
 	
 	@Rule
@@ -43,7 +43,7 @@ public class PageObjectModel {
 		.digitarCodigoPostal(ExcelUtils.getCellData(1, 11))
 		.aceitarTermoUso()
 		.enviarFormulario();
-	
+			
 		Screenshot.tirar(driver, "C://Users//caique.oliveira//Pictures//test-report"
 					+ evidencia.getMethodName() + ".png");
 }

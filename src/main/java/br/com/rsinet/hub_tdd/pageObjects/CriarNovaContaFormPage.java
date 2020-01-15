@@ -82,9 +82,9 @@ public class CriarNovaContaFormPage {
 		return this;
 	}
 
-	public AreaLogada enviarFormulario() {
+	public PesquisaInicialPage enviarFormulario() {
 		driver.findElement(By.id("register_btnundefined")).click();
-		return new AreaLogada(driver);
+		return new PesquisaInicialPage(driver);
 
 	}
 }
