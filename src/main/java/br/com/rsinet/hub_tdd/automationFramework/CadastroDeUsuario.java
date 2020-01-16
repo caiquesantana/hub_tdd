@@ -1,11 +1,11 @@
 package br.com.rsinet.hub_tdd.automationFramework;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Rule;
 import org.junit.rules.TestName;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_tdd.pageObjects.HomePage;
 import br.com.rsinet.hub_tdd.suporte.Screenshot;
@@ -20,12 +20,10 @@ public class CadastroDeUsuario {
 	public static TestName evidencia = new TestName();
 
 	public static void main(String[] args) throws Exception {
+		@SuppressWarnings("deprecation")
+		WebDriverWait wait = new WebDriverWait(driver, 5);
 		
 		ExcelUtils.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha1");
-//		driver = Web.createChrome();
-//		driver = new ChromeDriver();
-//		driver.get("http://advantageonlineshopping.com/");
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		new HomePage(driver)
 		.clickUser()
@@ -43,7 +41,10 @@ public class CadastroDeUsuario {
 		.digitarCodigoPostal(ExcelUtils.getCellData(1, 11))
 		.aceitarTermoUso()
 		.enviarFormulario();
-			
+		
+		wait.until(ExpectedConditions.textToBePresentInElement
+				(driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span")), ExcelUtils.getCellData(1,0)));	
+		
 		Screenshot.tirar(driver, "C://Users//caique.oliveira//Pictures//test-report"
 					+ evidencia.getMethodName() + ".png");
 }

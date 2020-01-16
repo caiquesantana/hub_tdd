@@ -4,17 +4,29 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Web {
-	public static WebDriver createChrome() {
+	static WebDriver driver;
+	
+	private Web() {
 		
-		WebDriver driver = new ChromeDriver();
+	}
+	
+	public static WebDriver createChrome() {
+		if (driver == null) {
+
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://advantageonlineshopping.com/");
-		
+		}
 		return driver;
 
+	}
+
+	public static void fecharDriver() {
+		if (driver != null)
+			driver.quit();
+		driver = null;
 	}
 }
