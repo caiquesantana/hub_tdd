@@ -23,7 +23,7 @@ public class CadastroDeUsuario {
 		@SuppressWarnings("deprecation")
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		
-		ExcelUtils.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Planilha1");
+		ExcelUtils.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Cadastro");
 
 		new HomePage(driver)
 		.clickUser()
