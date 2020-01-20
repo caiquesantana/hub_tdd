@@ -24,9 +24,9 @@ public class Web {
 
 	}
 
-	public static void fecharDriver() {
+	public static WebDriver fecharDriver() {
 		if (driver != null)
 			driver.quit();
-		driver = null;
+		return driver = null;
 	}
 }

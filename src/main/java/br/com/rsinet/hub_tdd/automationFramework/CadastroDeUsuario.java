@@ -42,8 +42,7 @@ public class CadastroDeUsuario {
 		.aceitarTermoUso()
 		.enviarFormulario();
 		
-		wait.until(ExpectedConditions.textToBePresentInElement
-				(driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span")), ExcelUtils.getCellData(1,0)));	
+		//wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span")), ExcelUtils.getCellData(1,0)));	
 		
 		Screenshot.tirar(driver, "C://Users//caique.oliveira//Pictures//test-report"
 					+ evidencia.getMethodName() + ".png");
