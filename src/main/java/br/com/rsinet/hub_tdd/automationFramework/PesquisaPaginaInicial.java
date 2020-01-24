@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.hub_tdd.pageObjects.PesquisaInicialPage;
 import br.com.rsinet.hub_tdd.suporte.Web;
-import br.com.rsinet.hub_tdd.utility.Constante;
-import br.com.rsinet.hub_tdd.utility.ExcelUtils;
 
 public class PesquisaPaginaInicial {
 	private static WebDriver driver = Web.createChrome();
@@ -14,8 +12,8 @@ public class PesquisaPaginaInicial {
 		
 		new PesquisaInicialPage(driver)
 		.categoriaLaptop()
-		.escolheProduto()
-		.addAoCarrinho();
+		.escolheProduto();
+//	.addAoCarrinho();
 //		.checkOut()
 //		.user(ExcelUtils.getCellData(1, 0))
 //		.senha(ExcelUtils.getCellData(1, 2))

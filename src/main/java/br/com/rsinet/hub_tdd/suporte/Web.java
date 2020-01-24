@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Web {
-	static WebDriver driver;
+	private static WebDriver driver;
 	
-	private Web() {
+	public Web() {
 		
 	}
 	
@@ -16,7 +16,7 @@ public class Web {
 		if (driver == null) {
 
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://advantageonlineshopping.com/");
 		}

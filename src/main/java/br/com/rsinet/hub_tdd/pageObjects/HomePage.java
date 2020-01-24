@@ -18,6 +18,7 @@ public class HomePage {
 		
 		driver.findElement(By.id("menuUser")).click();
 
+		@SuppressWarnings("deprecation")
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement usuario = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")));
 

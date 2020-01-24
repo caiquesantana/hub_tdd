@@ -2,9 +2,6 @@ package br.com.rsinet.hub_tdd.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_tdd.utility.Constante;
 import br.com.rsinet.hub_tdd.utility.ExcelUtils;
@@ -23,11 +20,13 @@ public class PesquisaInicialPage {
 	
 	public PesquisaInicialPage escolheProduto () throws Exception {
 		ExcelUtils.setExcelFile(Constante.Path_TestData + Constante.File_TestData, "Pesquisa pagina inicial");
-
 		String produto = (ExcelUtils.getCellData(1, 0));
-		//*[. ='']
-		
-		driver.findElement(By.xpath("//*[. ='"+produto+"']")).click();
+		driver.findElement(By.linkText(produto)).click();
+//		driver.findElement(By.id("8")).click();
+//		//*[. ='']
+//		
+//		driver.findElement(By.xpath("//*[. ='"+produto+"']")).click();
+//		
 		
 		return this;
 	}
@@ -70,5 +69,9 @@ public class PesquisaInicialPage {
 		driver.findElement(By.id("pay_now_btn_SAFEPAY")).click();
 		return this;
  }
+	public PesquisaInicialPage quantidade() {
+		driver.findElement(By.name("quantity")).sendKeys("11");
+		return this;
+	}
 	
 }
