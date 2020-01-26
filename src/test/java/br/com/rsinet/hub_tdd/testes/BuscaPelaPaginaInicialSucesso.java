@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
-public class BuscaPelaPaginaInicial {
+public class BuscaPelaPaginaInicialSucesso {
 	private WebDriver driver;
 	ExtentReports extensao;
 	ExtentTest logger;
@@ -47,7 +47,7 @@ public class BuscaPelaPaginaInicial {
   }
   @BeforeMethod
   public void beforeMethod() {
-	  driver = Web.createChrome();;
+	  driver = Web.createChrome();
   }
 
   @AfterMethod
